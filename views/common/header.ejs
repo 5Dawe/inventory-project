@@ -1,0 +1,23 @@
+<div id="top" class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-4"><img class="d-block mx-auto mb-4" src="/images/logo_text_name_small.jpg" alt="Easy Inventory Logo" ></span>
+      </a>
+
+      <ul class="nav nav-pills">
+
+      <% if(user) { %>
+        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/items" class="nav-link">Items</a></li>
+        <li class="nav-link"><a href="logout"> <%= user.email %> (Logout) </a></li>
+      <%
+    }%> 
+      <% if(!user) { %>
+        <li class="nav-item"><a href="login" class="nav-link active" aria-current="page">Login</a></li>
+        <li class="nav-item"><a href="create-user" class="nav-link">Register</a></li>
+      <% } %>
+
+      </ul>
+    </header>
+</div>
