@@ -69,13 +69,13 @@ app.get("/items", authMiddleware, itemController.lists);
 app.get("/items/delete/:id", itemController.delete);
 
 app.get("/items/update/:id", itemController.edit);
-app.post("/items/update:id", itemController.update);
+app.post("/items/update/:id", itemController.update);
 
 app.get("/create-item", authMiddleware, (req, res) => {
   res.render("create-item", {errors: {} })
 });
 
-app.post("/create-user", userController.create);
+app.post("/create-item", itemController.create);
 
 app.get("/create-user", authMiddleware, (req, res) => {
   res.render("create-user", {errors: {} })
