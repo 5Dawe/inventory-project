@@ -6,37 +6,19 @@ const app = express();
 const port = 20001;
 const bodyParser = require("body-parser");
 
-
 const Item = require("./models/Item");
 const User = require("./models/User");
-
 
 //controllers
 const itemController = require("./controllers/item");
 const userController = require("./controllers/user");
 
-//session
-const expressSession = require("express-session");
-app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: false, cookie: { expires: new Date(253402300000000) } }))
-
-
-//session middleware
-global.user = false;
-app.use("*", async (req, res, next) => {
-  if (req.session.userID && !global.user) {
-    const user = await User.findById(req.session.userID);
-    global.user = user;
-  }
-  next();
-})
-
 
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 const { WEB_PORT, MONGODB_URI } = process.env;
+
+//Database connection
 
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 mongoose.connection.on("error", (err) => {
@@ -45,6 +27,28 @@ mongoose.connection.on("error", (err) => {
   process.exit();
 })
 
+//middleware
+app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+
+
+//session
+const expressSession = require("express-session");
+app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: false, cookie: { expires: new Date(253402300000000) } }))
+
+
+//session middleware
+app.use("*", async (req, res, next) => {
+  global.user = false;
+  if (req.session.userID && !global.user) {
+    const user = await User.findById(req.session.userID);
+    global.user = user;
+  }
+  next();
+})
 
 
 //middleware route lockdown
