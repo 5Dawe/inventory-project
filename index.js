@@ -17,7 +17,7 @@ const userController = require("./controllers/user");
 
 //session
 const expressSession = require("express-session");
-app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }))
+app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: false, cookie: { expires: new Date(253402300000000) } }))
 
 
 //session middleware
