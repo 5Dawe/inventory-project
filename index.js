@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //session
 const expressSession = require("express-session");
-app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: false, cookie: { expires: new Date(253402300000000) } }))
+app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: false, cookie: {} }))
 
 
 //session middleware
