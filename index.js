@@ -67,8 +67,13 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/logout", async (req, res) => {
+  req.session.destroy();
+  global.user = false;
+  res.redirect('/');
+})
 
-app.get("/items", authMiddleware, itemController.lists);
+app.get("/items", itemController.lists);
 
 app.get("/items/delete/:id", itemController.delete);
 
@@ -93,11 +98,7 @@ app.get("/login", (req, res) => {
 });
 app.post("/login", userController.login);
 
-app.get("/logout", async (req, res) => {
-  req.session.destroy();
-  global.user = false;
-  res.redirect('/');
-})
+
 
 app.listen(port, () => {
   console.log(`listening at http://localhost:${port}`);
