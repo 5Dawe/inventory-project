@@ -2,9 +2,22 @@ const Item = require("../models/Item");
 
 
 exports.lists = async (req, res) => {
+    const perPage = 10;
+    const limit = parseInt(req.query.limit) || 10;
+    const page = parseInt(req.query.page) || 1;
+    const message = req.query.message;
+
     try {
-        const items = await Item.find({});
-        res.render("items", {items: items, message: req.query?.message});
+        const items = await Item.find({}).skip((perPage * page) - perPage).limit(limit);
+        const count = await Item.find({}).count();
+        const numberOfPages = Math.ceil(count / perPage);
+
+        res.render("items", {
+            items: items,
+            numberOfPages: numberOfPages,
+            currentPage: page,
+            message: message
+        });
     } catch (e) {
         res.status(404).send({message: "Could not find item"})
     }
