@@ -27,7 +27,7 @@
             <tr>
               <th>Make</th>
               <th>Model</th>
-              <th>_ID</th>
+              <th>Asset Number</th>
               <th></th>
               <th></th>
 
@@ -36,7 +36,7 @@
             <tr>
               <td><%= item.make %></td>
               <td><%= item.model %></td>
-              <td><%= item._id %></td>
+              <td><%= item.asset %></td>
               <td><a class="btn btn-primary btn-lg px-4 gap-3" href="/items/delete/<%= item._id %>">Delete</button></td>
               <td><a class="btn btn-primary btn-lg px-4 gap-3" href="/items/update/<%= item._id %>">Update</button></td>
             </tr>

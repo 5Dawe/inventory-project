@@ -61,7 +61,8 @@ exports.create = async (req, res) => {
             asset: req.body.asset, 
             serial: req.body.serial, 
             description: req.body.description, 
-            location: req.body.location, 
+            location: req.body.location,
+            building: req.body.building, 
             status: req.body.status
         });
         await item.save();

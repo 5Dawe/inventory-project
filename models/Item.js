@@ -9,6 +9,7 @@ const itemSchema = new Schema(
     serial: { type: String},
     description: { type: String},
     location: { type: String},
+    building: {type: String},
     status: { type: String},
     },
     { timestamps: true }
