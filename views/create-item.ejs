@@ -41,6 +41,74 @@
                     <p style="color: red"><%= errors['model'].message %></p>
                     <% } %>
                 </div>                
+                <div class="form-group">
+                  <label for="asset">Asset Number</label>
+                  <input
+                      type="number"
+                      class="form-control"
+                      id="asset"
+                      name="asset"
+                      placeholder="Enter Asset Number"
+                  />
+                  <% if (errors['asset']) { %>
+                  <p style="color: red"><%= errors['asset'].message %></p>
+                  <% } %>
+                </div>
+                <div class="form-group">
+                  <label for="serial">Serial Number</label>
+                  <input
+                      type="text"
+                      class="form-control"
+                      id="serial"
+                      name="serial"
+                      placeholder="Enter a serial number"
+                  />
+                  <% if (errors['serial']) { %>
+                  <p style="color: red"><%= errors['serial'].message %></p>
+                  <% } %>
+                </div>
+                <div class="form-group">
+                  <label for="description">Item Description</label>
+                  <input
+                      type="text"
+                      class="form-control"
+                      id="description"
+                      name="description"
+                      placeholder="Enter a description"
+                  />
+                  <% if (errors['description']) { %>
+                  <p style="color: red"><%= errors['description'].message %></p>
+                  <% } %>
+                </div>
+                <div class="form-group">
+                  <label for="location">Item Location</label>
+                  <input
+                      type="text"
+                      class="form-control"
+                      id="location"
+                      name="location"
+                      placeholder="Enter a location"
+                  />
+                  <% if (errors['location']) { %>
+                  <p style="color: red"><%= errors['location'].message %></p>
+                  <% } %>
+                </div>
+                <div class="form-group">
+                  <label for="status">Item Status</label>
+                  <input
+                      type="text"
+                      class="form-control"
+                      id="status"
+                      name="status"
+                      placeholder="Enter a status"
+                  />
+                  <% if (errors['status']) { %>
+                  <p style="color: red"><%= errors['status'].message %></p>
+                  <% } %>
+                </div>
+
+
+
 
                 </div>
                 <button type="sumbit" class="btn btn-primary btn-lg px-4 gap-3">Submit</button>

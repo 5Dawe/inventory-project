@@ -55,7 +55,15 @@ exports.create = async (req, res) => {
     console.log(req);
 
     try {
-        const item = new Item({ make: req.body.make, model: req.body.model });
+        const item = new Item({ 
+            make: req.body.make, 
+            model: req.body.model, 
+            asset: req.body.asset, 
+            serial: req.body.serial, 
+            description: req.body.description, 
+            location: req.body.location, 
+            status: req.body.status
+        });
         await item.save();
         res.redirect('/items/?message=item has been created')
         return;

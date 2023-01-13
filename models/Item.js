@@ -4,7 +4,12 @@ const { Schema } = mongoose;
 const itemSchema = new Schema(
     {
     make: { type: String, required: [true, 'A make is required']},
-    model: { type: String, required: [true, 'A model is required']}
+    model: { type: String, required: [true, 'A model is required']},
+    asset: { type: Number},
+    serial: { type: String},
+    description: { type: String},
+    location: { type: String},
+    status: { type: String},
     },
     { timestamps: true }
 
