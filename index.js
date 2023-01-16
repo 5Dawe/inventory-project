@@ -99,7 +99,9 @@ app.get("/login", (req, res) => {
 });
 app.post("/login", userController.login);
 
-
+app.get("/home", (req, res) => {
+  res.render('home', { errors: {} })
+});
 
 app.listen(port, () => {
   console.log(`listening at http://localhost:${port}`);
