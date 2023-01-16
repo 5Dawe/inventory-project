@@ -15,7 +15,7 @@ exports.login = async (req, res) => {
         {
            req.session.userID = user._id;
            console.log(req.session.userID);
-           res.redirect('/');
+           res.redirect('/home');
            return
         }
 
