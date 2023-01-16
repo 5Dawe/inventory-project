@@ -15,5 +15,5 @@ const itemSchema = new Schema(
     { timestamps: true }
 
 );
-
+itemSchema.index({'$**': 'text'});
 module.exports = mongoose.model("Item", itemSchema);

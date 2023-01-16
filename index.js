@@ -12,6 +12,7 @@ const User = require("./models/User");
 //controllers
 const itemController = require("./controllers/item");
 const userController = require("./controllers/user");
+const itemApiController = require("./controllers/api/item");
 
 
 app.set("view engine", "ejs");
@@ -102,6 +103,14 @@ app.post("/login", userController.login);
 app.get("/home", (req, res) => {
   res.render('home', { errors: {} })
 });
+
+
+app.get("/search-items", (req, res) => {
+  res.render('search-items', { errors: {} })
+});
+
+app.get("/api/search-items", itemApiController.list);
+
 
 app.listen(port, () => {
   console.log(`listening at http://localhost:${port}`);
