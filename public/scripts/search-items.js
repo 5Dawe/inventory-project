@@ -13,7 +13,7 @@ const handleEdit = async (id) => {
 const searchView = (item) => `
 
 <div class="col-12">
-    <div class="card">
+    <div class="card w-50 mt-4 mx-auto">
         <h5 class="card-header"> ${item.make} ${item.model} <strong>(search match: ${item.score})</strong></h5>
         <div class="card-body">
             <p class="card-text">${item.description}</p>
@@ -22,12 +22,13 @@ const searchView = (item) => `
                 <li class="list-group-item">Serial number: ${item.serial}</li>
                 <li class="list-group-item">Location: ${item.location}</li>  
                 <li class="list-group-item">Building: ${item.builindg}</li> 
-                <li class="list-group-item">Status: ${item.status}</li> 
+                <li class="list-group-item">Status: ${item.status}</li>
+                <li class="list-group-item">
+                    <a href="/items/delete/${item._id}" class="btn btn-secondary">Delete</a> 
+                    <a href="/items/update/${item._id}" class="btn btn-primary">View / Update</a></li>
+                
             </ul>
         </div>
-        <a href="/items/delete/${item._id}" class="btn btn-primary">Delete</a>
-        <a href="/items/update/${item._id}" class="btn btn-primary">View / Update</a>
-
     </div>      
 `;
 

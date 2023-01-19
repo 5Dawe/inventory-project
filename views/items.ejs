@@ -8,10 +8,8 @@
   </head>
   <body>
     <%- include('common/header'); -%>
-
-
-    <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">All Inventory Items</h1>
+    <div class="px-4 py-1 my-1 text-center">
+      <img class="d-block mx-auto mb-4" src="https://res.cloudinary.com/dga2akfep/image/upload/v1673815033/item_view_sml_psgjzp.jpg" alt="View items">
 
         <% if (message) { %>
           <div class="col-lg-6 mx-auto">
@@ -19,17 +17,16 @@
           </div>
         <% } %>
         <div class="col-md-12 col-md-offset-2  justify-content-center">
+        <p>View all inventory items. Add a new item by clicking the button below.</p>
           <a role="button" class="btn btn-primary btn-xs" href="/create-item">Add a new inventory item</a> 
         
         </div>
 
-
-        <%- include('common/pagination'); -%>
-
+          <%- include('common/pagination'); -%>
 
 
         <div class="col-md-12 col-md-offset-2">
-          <table class="table table-striped custab">
+          <table class="table table-sm table-striped custab">
             <tr>
               <th>Make</th>
               <th>Model</th>
@@ -43,8 +40,8 @@
               <td><%= item.make %></td>
               <td><%= item.model %></td>
               <td><%= item.asset %></td>
-              <td><a class="btn btn-primary btn-lg px-4 gap-3" href="/items/delete/<%= item._id %>">Delete</a></td>
-              <td><a class="btn btn-primary btn-lg px-4 gap-3" href="/items/update/<%= item._id %>">View / Update</a></td>
+              <td><a class="btn btn-danger btn-xs px-4 gap-3" href="/items/delete/<%= item._id %>">Delete</a></td>
+              <td><a class="btn btn-primary btn-xs px-4 gap-3" href="/items/update/<%= item._id %>">View / Update</a></td>
             </tr>
             <% }); %>
           </table>
@@ -60,15 +57,7 @@
 
 
 
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-          </div>
-        </div>
-      </div>
-
+        
     <%- include('common/footer'); -%>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

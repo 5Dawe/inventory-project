@@ -2,7 +2,7 @@
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4"><img class="d-block mx-auto mb-4" src="https://res.cloudinary.com/dga2akfep/image/upload/v1673794277/Website/logo_text_name_small_henw65.jpg" alt="Easy Inventory Logo" ></span>
+        <span class="fs-4"><img class="d-block mx-auto mb-1" src="https://res.cloudinary.com/dga2akfep/image/upload/v1673794277/Website/logo_text_name_small_henw65.jpg" alt="Easy Inventory Logo" ></span>
       </a>
 
       <ul class="nav nav-pills">
@@ -10,6 +10,7 @@
       <% if(user) { %>
         <li class="nav-item"><a href="/home" class="nav-link active" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="/items" class="nav-link">Items</a></li>
+        <li class="nav-item"><a href="/search-items" class="nav-link">Item Search</a></li>
         <li class="nav-item"><a href="/create-item" class="nav-link">Create Item</a></li>
         <li class="nav-item"><a href="/create-user" class="nav-link">Create User</a></li>
         <li class="nav-link"><a href="logout"> <%= user.email %> (Logout) </a></li>

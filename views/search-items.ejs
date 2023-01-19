@@ -10,9 +10,11 @@
     <%- include('common/header'); -%>
 
     
-    <div class="px-4 py-5 my-5 text-center">
+    <div class="px-4 py-1 my-1 text-center">
       <img class="d-block mx-auto mb-4" src="https://res.cloudinary.com/dga2akfep/image/upload/v1673815033/item_search_sml_mrps7w.jpg" alt="Item search">
-      <h1 class="display-5 fw-bold">Search items</h1>
+<p>
+Search for any assets, just enter search terms below.
+</p>
       <div class="col-lg-6 mx-auto">
           <form>
             <div class="form-group">
@@ -23,7 +25,7 @@
                 id="searchInput"
               />
             </div>
-            <div>
+            <div><br>
               <button onclick="handleClick()" type="button" class="btn btn-primary btn-lg px-4 gap-3">Search</button>
             </div>
           </form>
