@@ -24,7 +24,7 @@ const searchView = (item) => `
                 <li class="list-group-item">Building: ${item.builindg}</li> 
                 <li class="list-group-item">Status: ${item.status}</li>
                 <li class="list-group-item">
-                    <a href="/items/delete/${item._id}" class="btn btn-secondary">Delete</a> 
+                    <a href="/items/delete/${item._id}" class="btn btn-danger">Delete</a> 
                     <a href="/items/update/${item._id}" class="btn btn-primary">View / Update</a></li>
                 
             </ul>
