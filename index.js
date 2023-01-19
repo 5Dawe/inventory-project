@@ -74,7 +74,7 @@ app.get("/logout", async (req, res) => {
   res.redirect('/');
 })
 
-app.get("/items", itemController.lists);
+app.get("/items", authMiddleware, itemController.lists);
 
 
 app.get("/items/delete/:id", itemController.delete);
@@ -86,13 +86,13 @@ app.get("/create-item", authMiddleware, (req, res) => {
   res.render("create-item", {errors: {} })
 });
 
-app.post("/create-item", itemController.create);
+app.post("/create-item", authMiddleware, itemController.create);
 
 app.get("/create-user", authMiddleware, (req, res) => {
   res.render("create-user", {errors: {} })
 });
 
-app.post("/create-user", userController.create);
+app.post("/create-user", authMiddleware, userController.create);
 
 
 app.get("/login", (req, res) => {
@@ -100,7 +100,7 @@ app.get("/login", (req, res) => {
 });
 app.post("/login", userController.login);
 
-app.get("/home", (req, res) => {
+app.get("/home", authMiddleware, (req, res) => {
   res.render('home', { errors: {} })
 });
 
