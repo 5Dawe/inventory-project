@@ -8,9 +8,7 @@ exports.login = async (req, res) => {
             res.render('login', { errors: { email: { message: 'Email address not found' } } })
             return;
         }
-
         const match = await bcrypt.compare(req.body.password, user.password);
-        
         if (match) 
         {
            req.session.userID = user._id;
@@ -18,10 +16,7 @@ exports.login = async (req, res) => {
            res.redirect('/home');
            return
         }
-
         res.render('login', { errors: { password: { message: 'Incorrect password' } } })
-
-
     } catch (e) {
         return res.status(400).send({
             message: JSON.parse(e),

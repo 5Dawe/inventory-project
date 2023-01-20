@@ -1,9 +1,0 @@
-      <h1 class="display-5 fw-bold">Easy Inventory</h1>
-
-
-            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-
-                    <img class="d-block mx-auto mb-4" src="/images/logo_full_medium.jpg" alt="Easy Inventory Logo" >
-
-
